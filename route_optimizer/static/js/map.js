@@ -1,10 +1,11 @@
 // Initialize map centered on India
 let map = L.map('map').setView([20.5937, 78.9629], 5);
 
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 19
+// Use Carto basemap tiles to avoid OSM volunteer tile server referrer restrictions.
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 20
 }).addTo(map);
 
 // Store markers and layers
